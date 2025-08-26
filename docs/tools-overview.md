@@ -1,3 +1,9 @@
+---
+layout: default
+title: ツール概要 - Premium Success Plan
+description: Google Analytics 4、Search Console、Microsoft Clarity、Google Tag Managerの統合活用方法
+---
+
 # 🛠️ ツール概要 - Premium Success Plan
 
 ## 🚀 広告運用を支えるGoogle の強力なツール

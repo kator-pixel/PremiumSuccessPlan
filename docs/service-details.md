@@ -1,3 +1,9 @@
+---
+layout: default
+title: サービス詳細 - Premium Success Plan
+description: PDCA運用プロセスと対応広告媒体の詳細。リスティング広告からSNS広告まで幅広いプラットフォームに対応。
+---
+
 # 📋 サービス詳細 - Premium Success Plan
 
 ## 🎯 リスティング広告運用サービス概要

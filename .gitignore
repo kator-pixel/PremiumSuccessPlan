@@ -1,0 +1,32 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# PDFファイル（Material内の資料は除外）
+Material/*.pdf
+
+# Claude設定ファイル
+.claude/
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Temporary files
+.tmp
+*.tmp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

@@ -1,3 +1,9 @@
+---
+layout: default
+title: GitHub Pages公開手順
+description: GitHub Pagesでの公開方法、カスタマイズ設定、SEO最適化の完全ガイド。
+---
+
 # 🌐 GitHub Pages 公開手順
 
 ## 📋 前準備

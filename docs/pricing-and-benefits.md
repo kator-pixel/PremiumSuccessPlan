@@ -1,3 +1,9 @@
+---
+layout: default
+title: 料金・メリット - Premium Success Plan
+description: 月額15,000円で実現するROI280%以上の成果。他社比較と詳細な料金体系。
+---
+
 # 💰 料金とメリット - Premium Success Plan
 
 ## 💸 料金体系

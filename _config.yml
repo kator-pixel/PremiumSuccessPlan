@@ -1,0 +1,64 @@
+title: "Premium Success Plan"
+description: "リスティング広告運用最適化サービス - データ統合による継続的改善でROI向上を実現"
+baseurl: "" # サブディレクトリを使用しない場合は空文字
+url: "" # GitHub Pagesの場合は自動設定
+
+# GitHub Pages設定
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+
+# 言語設定
+lang: ja-JP
+
+# サイト情報
+author:
+  name: "Premium Success Plan Team"
+  email: "info@premiumsuccess.example.com"
+
+# SEO設定
+twitter:
+  username: premiumsuccess
+  card: summary_large_image
+
+facebook:
+  publisher: premiumsuccess
+
+social:
+  name: Premium Success Plan
+  links:
+    - https://github.com/kator-pixel/PremiumSuccessPlan
+
+# Google Analytics (必要に応じてIDを設定)
+# google_analytics: UA-XXXXXXXXX-X
+
+# 除外するファイル
+exclude:
+  - Material/
+  - "*.pdf"
+  - .claude/
+
+# ナビゲーション設定
+navigation:
+  - title: "ホーム"
+    url: /
+  - title: "サービス詳細"
+    url: /docs/service-details
+  - title: "料金・メリット"  
+    url: /docs/pricing-and-benefits
+  - title: "導入事例"
+    url: /docs/case-studies
+  - title: "実装ガイド"
+    url: /docs/implementation-guide
+
+# Markdown設定
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
+# プラグイン設定
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

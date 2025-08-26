@@ -1,3 +1,9 @@
+---
+layout: default
+title: 実装ガイド - Premium Success Plan
+description: 導入から成果実現までの4フェーズ完全ロードマップ。ツール設定からPDCAサイクル確立まで。
+---
+
 # 🚀 実装ガイド - Premium Success Plan
 
 ## 📋 導入から成果実現までの完全ロードマップ

@@ -1,3 +1,9 @@
+---
+layout: default
+title: 導入事例 - Premium Success Plan
+description: BtoB、EC、地域サービスなど、業界別の成功事例と具体的な改善数値。ROI280%-6400%を実現。
+---
+
 # 📊 導入事例とケーススタディ - Premium Success Plan
 
 ## 🎯 リスティング広告最適化の成功事例

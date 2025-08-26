@@ -5,7 +5,10 @@
       "Read(/C:\\Users\\kator\\markting\\customer_proposal_document/**)",
       "Read(/C:\\Users\\kator\\markting\\customer_proposal_document/**)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git branch:*)"
     ],
     "deny": [],
     "ask": []

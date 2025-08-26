@@ -660,32 +660,60 @@
     </footer>
 
     <script>
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Basic Authentication
+        function checkAuth() {
+            const authData = sessionStorage.getItem('authenticated');
+            if (authData !== 'true') {
+                const username = prompt('ユーザー名を入力してください:');
+                const password = prompt('パスワードを入力してください:');
+                
+                // 認証情報（本番環境では適切に暗号化してください）
+                if (username === 'premium' && password === 'success2025') {
+                    sessionStorage.setItem('authenticated', 'true');
+                    return true;
+                } else {
+                    alert('認証に失敗しました。正しいユーザー名とパスワードを入力してください。');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Check authentication on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            if (!checkAuth()) {
+                document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;"><h2>アクセスが拒否されました</h2><p>正しい認証情報が必要です。</p><button onclick="location.reload()">再試行</button></div>';
+                return;
+            }
+
+            // Original scripts only run after authentication
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
 
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            // Fade in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>

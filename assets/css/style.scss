@@ -1,0 +1,371 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* 日本語フォント設定 */
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ヘッダー設定 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  color: #2c3e50;
+  border-bottom: 3px solid #4CAF50;
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: #34495e;
+  border-left: 5px solid #4CAF50;
+  padding-left: 15px;
+  margin-top: 2em;
+}
+
+h3 {
+  color: #4CAF50;
+}
+
+/* バッジスタイル */
+.badge-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/* テーブルスタイル */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.9em;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* グリッドレイアウト */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.feature-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.feature-card h3 {
+  color: #4CAF50;
+  margin-top: 0;
+}
+
+/* 問題解決セクション */
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.problem-card {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.problem-card h3 {
+  color: white;
+  margin-top: 0;
+}
+
+/* 解決策セクション */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.solution-card {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.solution-card h3 {
+  color: white;
+  margin-top: 0;
+}
+
+/* ツールセクション */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  margin: 2em 0;
+}
+
+.tool-card {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1em;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+  border-color: #4CAF50;
+  background: #e8f5e8;
+}
+
+.tool-logo {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* 価格表示 */
+.pricing-highlight {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 2em;
+  border-radius: 12px;
+  text-align: center;
+  margin: 2em 0;
+}
+
+.price {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.price-note {
+  opacity: 0.9;
+  font-size: 0.9em;
+}
+
+/* 成果表示 */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  margin: 2em 0;
+}
+
+.result-card {
+  background: linear-gradient(135deg, #00b894, #00a085);
+  color: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result-number {
+  font-size: 2em;
+  font-weight: bold;
+  display: block;
+}
+
+/* CTA ボタン */
+.cta-section {
+  text-align: center;
+  margin: 3em 0;
+  padding: 2em;
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  border-radius: 12px;
+  color: white;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #00b894;
+  color: white;
+  padding: 1em 2em;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.cta-button:hover {
+  background: #00a085;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,185,148,0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .features-grid,
+  .problems-grid,
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .price {
+    font-size: 2em;
+  }
+  
+  .cta-button {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card,
+.problem-card,
+.solution-card,
+.tool-card,
+.result-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* スクロールインジケーター */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #4CAF50, #45a049);
+  z-index: 1000;
+  transition: width 0.3s ease;
+}
+
+/* 目次スタイル */
+.toc {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 2em 0;
+  position: sticky;
+  top: 20px;
+}
+
+.toc h3 {
+  margin-top: 0;
+  color: #495057;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.5em 0;
+}
+
+.toc a {
+  color: #495057;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.toc a:hover {
+  background: #e9ecef;
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+/* コードブロック */
+pre, code {
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+code {
+  background: #f1f3f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* フッター */
+.footer {
+  text-align: center;
+  padding: 2em 0;
+  margin-top: 4em;
+  border-top: 1px solid #e9ecef;
+  color: #6c757d;
+  font-size: 0.9em;
+}

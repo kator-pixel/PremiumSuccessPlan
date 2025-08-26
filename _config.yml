@@ -4,9 +4,7 @@ baseurl: "" # サブディレクトリを使用しない場合は空文字
 url: "" # GitHub Pagesの場合は自動設定
 
 # GitHub Pages設定
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-- jekyll-remote-theme
+theme: jekyll-theme-minimal
 
 # 言語設定
 lang: ja-JP

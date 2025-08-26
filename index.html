@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Success Plan - リスティング広告運用最適化サービス</title>
+    <meta name="description" content="データ統合による継続的改善でROI向上を実現。Google Analytics、Search Console、Microsoft Clarityを活用した総合的な広告最適化サービス。月額15,000円でCPA40%改善、ROI280%達成。">
+    <meta name="keywords" content="リスティング広告, 広告運用, Google Analytics, ROI改善, CPA削減, 広告最適化">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="Premium Success Plan - リスティング広告運用最適化サービス">
+    <meta property="og:description" content="月額15,000円でROI280%達成。データ統合による継続的改善で広告効果を最大化">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kator-pixel.github.io/PremiumSuccessPlan">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* スクロールインジケーター */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(to right, #4CAF50, #45a049);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        /* ヘッダー */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* メインコンテナ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* セクション */
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #4CAF50, #45a049);
+        }
+
+        h3 {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 目次 */
+        .toc {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 2rem;
+            z-index: 100;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #495057;
+            text-align: center;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .toc a {
+            color: #495057;
+            text-decoration: none;
+            display: block;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            background: #4CAF50;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* グリッドレイアウト */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+
+        /* カード共通スタイル */
+        .card {
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #4CAF50, #45a049);
+        }
+
+        /* 問題カード */
+        .problem-card {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+
+        .problem-card h3 {
+            color: white;
+        }
+
+        .problem-card::before {
+            background: linear-gradient(to right, #ff4757, #ff3742);
+        }
+
+        /* 解決策カード */
+        .solution-card {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .solution-card h3 {
+            color: white;
+        }
+
+        /* ツールカード */
+        .tool-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            border-color: #4CAF50;
+            background: #f8fff8;
+        }
+
+        .tool-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* フィーチャーカード */
+        .feature-card {
+            background: white;
+        }
+
+        /* 価格ハイライト */
+        .pricing-highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-note {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 成果表示 */
+        .result-card {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* テーブル */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background: #f8fff8;
+        }
+
+        /* CTA セクション */
+        .cta-section {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,184,148,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,184,148,0.4);
+            background: linear-gradient(135deg, #00a085, #009977);
+        }
+
+        /* フッター */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .header .subtitle { font-size: 1.1rem; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .badge-container { flex-direction: column; align-items: center; }
+            .price { font-size: 2.5rem; }
+            .cta-button { display: block; margin: 1rem 0; }
+            section { padding: 2rem 0; }
+            .container { padding: 0 1rem; }
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* スクロール時の表示アニメーション */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator" id="scroll-indicator"></div>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <h1>🚀 Premium Success Plan</h1>
+            <p class="subtitle">リスティング広告運用最適化サービス</p>
+            <div class="badge-container">
+                <div class="badge">💰 月額 ¥15,000</div>
+                <div class="badge">📅 1年契約</div>
+                <div class="badge">⚡ 100pt/月</div>
+                <div class="badge">📈 ROI 280%+</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 目次 -->
+    <div class="container">
+        <nav class="toc animate-on-scroll">
+            <h3>📋 サービス内容</h3>
+            <div class="toc-grid">
+                <a href="#problems">❌ よくある課題</a>
+                <a href="#solutions">✅ 解決策</a>
+                <a href="#tools">🛠️ 活用ツール</a>
+                <a href="#platforms">🌐 対応媒体</a>
+                <a href="#pricing">💰 料金・内容</a>
+                <a href="#results">📊 期待成果</a>
+                <a href="#cases">📈 導入事例</a>
+                <a href="#process">🔄 実装手順</a>
+                <a href="#contact">📞 お問い合わせ</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 問題提起 -->
+    <section id="problems">
+        <div class="container">
+            <h2>❌ リスティング広告運用でこんな悩みはありませんか？</h2>
+            <div class="grid-3">
+                <div class="card problem-card animate-on-scroll">
+                    <h3>📈 広告費は使っているが、成果が見えない</h3>
+                    <ul>
+                        <li>クリック数は多いが、コンバージョンに繋がらない</li>
+                        <li>CPAが高騰し続けている</li>
+                        <li>競合に負けている感覚がある</li>
+                    </ul>
+                </div>
+
+                <div class="card problem-card animate-on-scroll">
+                    <h3>📋 データはあるが、活用できていない</h3>
+                    <ul>
+                        <li>Google Analyticsの数値を見ているだけ</li>
+                        <li>改善ポイントが分からない</li>
+                        <li>PDCAサイクルが回せていない</li>
+                    </ul>
+                </div>
+
+                <div class="card problem-card animate-on-scroll">
+                    <h3>🔗 広告とサイトの連携が取れていない</h3>
+                    <ul>
+                        <li>広告は運用しているがLPの内容を更新できていない</li>
+                        <li>ユーザーの期待値とのギャップがある</li>
+                        <li>離脱率が高い</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解決策 -->
+    <section id="solutions">
+        <div class="container">
+            <h2>✅ プレミアムサクセスプランが解決する3つの壁</h2>
+            <div class="grid-3">
+                <div class="card solution-card animate-on-scroll">
+                    <h3>🎯 広告とLPの不一致解決</h3>
+                    <p>広告で入稿したキーワードがLPに反映されていない問題を解決</p>
+                    <p><strong>結果:</strong> 品質スコアの向上 → クリック単価の削減</p>
+                </div>
+
+                <div class="card solution-card animate-on-scroll">
+                    <h3>📊 データの統合分析</h3>
+                    <p>広告データとサイトデータを統合して総合的に分析</p>
+                    <p><strong>結果:</strong> 機会損失の最小化 → CPA向上</p>
+                </div>
+
+                <div class="card solution-card animate-on-scroll">
+                    <h3>⚡ 改善サイクルの高速化</h3>
+                    <p>月1回のレポートから即時改善へのスピードアップ</p>
+                    <p><strong>結果:</strong> 競合優位性の確立 → 市場シェア拡大</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ツール -->
+    <section id="tools">
+        <div class="container">
+            <h2>🛠️ 強力なツールセット</h2>
+            <div class="grid-4">
+                <div class="card tool-card animate-on-scroll">
+                    <div class="tool-logo">📊</div>
+                    <h4>Google Analytics 4</h4>
+                    <p>サイト訪問者の属性・行動分析<br>流入傾向と離脱ポイントの特定</p>
+                </div>
+
+                <div class="card tool-card animate-on-scroll">
+                    <div class="tool-logo">🔍</div>
+                    <h4>Search Console</h4>
+                    <p>検索キーワードとクリック率<br>平均掲載順位とパフォーマンス</p>
+                </div>
+
+                <div class="card tool-card animate-on-scroll">
+                    <div class="tool-logo">🔥</div>
+                    <h4>Microsoft Clarity</h4>
+                    <p>ヒートマップ・セッション録画<br>ユーザー行動の詳細可視化</p>
+                </div>
+
+                <div class="card tool-card animate-on-scroll">
+                    <div class="tool-logo">⚙️</div>
+                    <h4>Google Tag Manager</h4>
+                    <p>高度な計測環境構築<br>長期的なデータ基盤整備</p>
+                </div>
+            </div>
+
+            <div class="card feature-card animate-on-scroll" style="margin-top: 3rem;">
+                <h3>💡 専門家による総合診断</h3>
+                <p>経験豊富なコンサルタントが毎月のレポートで変化を定点観測し、以下を実施：</p>
+                <ul style="margin-top: 1rem;">
+                    <li>自然検索と広告流入の効果比較</li>
+                    <li>キーワードとLPの一致度チェック</li>
+                    <li>数値に基づくカスタマイズされた戦略提案</li>
+                    <li>SEO対策との連携による相乗効果分析</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 対応媒体 -->
+    <section id="platforms">
+        <div class="container">
+            <h2>🌐 対応媒体（リスティング広告から多様な広告まで）</h2>
+            
+            <h3 style="text-align: center; margin-bottom: 2rem;">🎯 顕在層向け（高CV期待）</h3>
+            <div class="grid-2">
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🔍 Google リスティング広告</h3>
+                    <p>検索結果での即効性。Google検索、検索パートナーサイト（goo、livedoor、価格.com等）に配信</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🟡 Yahoo! リスティング広告</h3>
+                    <p>30代以上の購買層へアプローチ。Yahoo!検索、検索パートナーサイト（Bing、livedoor等）に配信</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>⚡ Pmax広告</h3>
+                    <p>Google全配信面への自動最適化。YouTube、Gmail、検索結果画面など全配信面に最適配信</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🔄 リマーケティング広告</h3>
+                    <p>既存訪問者への再アプローチ。コンバージョン率の高い見込み客へ効率的な配信</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 2rem;">🌟 準顕在層〜潜在層向け</h3>
+            <div class="grid-3">
+                <div class="card feature-card animate-on-scroll">
+                    <h3>📱 Meta広告 (Instagram/Facebook)</h3>
+                    <p>精度の高いターゲティング。年齢・興味・行動履歴を基にした配信。ABテスト機能搭載</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🎵 TikTok広告</h3>
+                    <p>10～30代ユーザーが約7割。没入感の高い広告で話題化。TikTok Shop内での購入獲得も可能</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🎥 YouTube広告</h3>
+                    <p>動画での没入感の高い訴求。幅広い年齢層にリーチし、ブランド認知から購入促進まで対応</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🎨 Pinterest広告</h3>
+                    <p>女性ユーザーが多く、35～44歳の39%が利用。準顕在層へのアプローチに最適</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🔷 DemandGeneration広告</h3>
+                    <p>Google管理配信面での細やかなブランディング。長期的なコンバージョンユーザー育成</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🌐 その他多数対応</h3>
+                    <p>X(旧Twitter)、LINE広告、ディスプレイ広告など、幅広いプラットフォームに対応</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金 -->
+    <section id="pricing">
+        <div class="container">
+            <h2>💰 料金・サービス内容</h2>
+            
+            <div class="pricing-highlight animate-on-scroll">
+                <h3>月額料金</h3>
+                <div class="price">¥15,000<span style="font-size: 0.5em;">/月</span></div>
+                <p class="price-note">※ご契約期間は1年間です（税抜）</p>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: 2rem;">📋 含まれるサービス</h3>
+            <div class="grid-2">
+                <div class="card feature-card animate-on-scroll">
+                    <h3>📊 アクセス解析レポート</h3>
+                    <p>Google Analytics & Search Consoleによる詳細レポートを月次送付。サイト全体の状態確認と改善提案を含む。</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🔥 ヒートマップ解析</h3>
+                    <p>Microsoft Clarity導入でユーザー行動を可視化。クリック位置、スクロール深度、セッションレコーディング分析。</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>⚙️ Google タグマネージャー設置</h3>
+                    <p>Webサイト運用に必要不可欠なGTMを設置し、高度な計測環境を構築（設定されていない場合が対象）。</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🛠️ 毎月100pt分の修正対応</h3>
+                    <p><strong>テキスト修正:</strong> 25pt × 4ヵ所<br>
+                    <strong>バナー作成:</strong> 100pt × 1点<br>
+                    ※ポイントは使い切りとなります</p>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🤝 任意MTG (月30分)</h3>
+                    <p>Webコンサルタントによる解説（予約制・希望者のみ）。Google Analytics操作方法の指導で担当者のスキル向上をサポート。</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 2rem;">💡 他社サービスとの比較</h3>
+            <div class="table-container animate-on-scroll">
+                <table>
+                    <tr>
+                        <th>項目</th>
+                        <th>🏆 Premium Success Plan</th>
+                        <th>他社A（月額30,000円）</th>
+                        <th>他社B（月額25,000円）</th>
+                    </tr>
+                    <tr>
+                        <td>料金</td>
+                        <td><strong>¥15,000/月</strong></td>
+                        <td>¥30,000/月</td>
+                        <td>¥25,000/月</td>
+                    </tr>
+                    <tr>
+                        <td>修正対応</td>
+                        <td><strong>✅ 100pt/月含む</strong></td>
+                        <td>❌ 別途費用</td>
+                        <td>❌ 別途費用</td>
+                    </tr>
+                    <tr>
+                        <td>ヒートマップ</td>
+                        <td><strong>✅ 標準装備</strong></td>
+                        <td>❌ 別途費用</td>
+                        <td>❌ 未対応</td>
+                    </tr>
+                    <tr>
+                        <td>GTM設置</td>
+                        <td><strong>✅ 無料特典</strong></td>
+                        <td>❌ 別途費用</td>
+                        <td>❌ 未対応</td>
+                    </tr>
+                    <tr>
+                        <td>コンサル対応</td>
+                        <td><strong>✅ 月30分</strong></td>
+                        <td>❌ 別途費用</td>
+                        <td>❌ 未対応</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 期待される成果 -->
+    <section id="results">
+        <div class="container">
+            <h2>📊 期待される成果</h2>
+            <div class="grid-3">
+                <div class="card result-card animate-on-scroll">
+                    <span class="result-number">-40%</span>
+                    <p>CPA改善</p>
+                </div>
+
+                <div class="card result-card animate-on-scroll">
+                    <span class="result-number">+65%</span>
+                    <p>CV数向上</p>
+                </div>
+
+                <div class="card result-card animate-on-scroll">
+                    <span class="result-number">280%</span>
+                    <p>平均ROI</p>
+                </div>
+
+                <div class="card result-card animate-on-scroll">
+                    <span class="result-number">3ヶ月</span>
+                    <p>効果実感</p>
+                </div>
+
+                <div class="card result-card animate-on-scroll">
+                    <span class="result-number">6ヶ月</span>
+                    <p>ROI実現</p>
+                </div>
+
+                <div class="card result-card animate-on-scroll">
+                    <span class="result-number">12ヶ月</span>
+                    <p>完全最適化</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 導入事例 -->
+    <section id="cases">
+        <div class="container">
+            <h2>📈 導入事例</h2>
+            <div class="grid-3">
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🏢 BtoB SaaS企業</h3>
+                    <p><strong>導入前:</strong></p>
+                    <ul>
+                        <li>月額広告費: ¥500,000</li>
+                        <li>月間CV数: 25件</li>
+                        <li>CPA: ¥20,000</li>
+                    </ul>
+                    <p><strong>導入後6ヶ月:</strong></p>
+                    <ul>
+                        <li>月間CV数: 42件（+68%向上）</li>
+                        <li>CPA: ¥11,905（40%改善）</li>
+                        <li><strong>ROI: 278%達成</strong></li>
+                    </ul>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🛒 EC事業者</h3>
+                    <p><strong>導入前:</strong></p>
+                    <ul>
+                        <li>月額広告費: ¥800,000</li>
+                        <li>ROAS: 280%</li>
+                        <li>新規顧客獲得率: 15%</li>
+                    </ul>
+                    <p><strong>導入後12ヶ月:</strong></p>
+                    <ul>
+                        <li>ROAS: 420%（50%向上）</li>
+                        <li>新規顧客獲得率: 31%（107%向上）</li>
+                        <li><strong>売上向上: +¥960,000/月</strong></li>
+                    </ul>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🏥 地域サービス業</h3>
+                    <p><strong>導入前:</strong></p>
+                    <ul>
+                        <li>月額広告費: ¥150,000</li>
+                        <li>月間問い合わせ: 12件</li>
+                        <li>問い合わせ単価: ¥12,500</li>
+                    </ul>
+                    <p><strong>導入後9ヶ月:</strong></p>
+                    <ul>
+                        <li>月間問い合わせ: 28件（133%向上）</li>
+                        <li>問い合わせ単価: ¥5,357（57%改善）</li>
+                        <li><strong>新規患者: 4人 → 20人（400%増加）</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実装プロセス -->
+    <section id="process">
+        <div class="container">
+            <h2>🔄 実装プロセス（4フェーズ）</h2>
+            <div class="grid-2">
+                <div class="card feature-card animate-on-scroll">
+                    <h3>📋 Phase 1: 初期設定・診断（1-2週目）</h3>
+                    <ul>
+                        <li>Google タグマネージャー設置</li>
+                        <li>Google Analytics 4 設定最適化</li>
+                        <li>Microsoft Clarity 導入</li>
+                        <li>現状分析とベースライン設定</li>
+                    </ul>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>⚡ Phase 2: 初期改善実施（3-6週目）</h3>
+                    <ul>
+                        <li>広告とLPの一致度改善</li>
+                        <li>100pt修正対応（第1回）</li>
+                        <li>データ統合と分析基盤強化</li>
+                        <li>カスタムレポート作成</li>
+                    </ul>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🎯 Phase 3: 本格最適化（7-12週目）</h3>
+                    <ul>
+                        <li>継続的改善サイクルの確立</li>
+                        <li>月次PDCAサイクル実行</li>
+                        <li>多媒体統合戦略の展開</li>
+                        <li>高度な最適化手法の適用</li>
+                    </ul>
+                </div>
+
+                <div class="card feature-card animate-on-scroll">
+                    <h3>🏆 Phase 4: 成果最大化（3ヶ月目以降）</h3>
+                    <ul>
+                        <li>月次成果レビュー会</li>
+                        <li>自動化による効率化</li>
+                        <li>専門知識の内製化</li>
+                        <li>継続改善体制の確立</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 2rem;">📊 成果実現タイムライン</h3>
+            <div class="table-container animate-on-scroll">
+                <table>
+                    <tr>
+                        <th>期間</th>
+                        <th>CPA改善率</th>
+                        <th>CV数向上率</th>
+                        <th>累積ROI</th>
+                        <th>主な施策</th>
+                    </tr>
+                    <tr>
+                        <td>1ヶ月目</td>
+                        <td>-5%</td>
+                        <td>+8%</td>
+                        <td>-100%</td>
+                        <td>環境構築・現状分析</td>
+                    </tr>
+                    <tr>
+                        <td>3ヶ月目</td>
+                        <td>-25%</td>
+                        <td>+38%</td>
+                        <td>+85%</td>
+                        <td>本格改善・効果実感</td>
+                    </tr>
+                    <tr>
+                        <td>6ヶ月目</td>
+                        <td>-40%</td>
+                        <td>+65%</td>
+                        <td>+280%</td>
+                        <td>ROI実現・最適化</td>
+                    </tr>
+                    <tr>
+                        <td>12ヶ月目</td>
+                        <td>-48%</td>
+                        <td>+95%</td>
+                        <td>+450%</td>
+                        <td>継続成長・拡張準備</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact">
+        <div class="container">
+            <div class="cta-section animate-on-scroll">
+                <h2>🎉 無料相談実施中</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">あなたの業界・状況に合わせたカスタマイズ提案をいたします</p>
+                <p style="margin-bottom: 2rem;">初回契約時に<strong>設定サポート無料</strong>！<br>通常別途費用のGoogle タグマネージャー設置を無料で実施</p>
+
+                <a href="mailto:contact@example.com" class="cta-button">📞 無料相談を申し込む</a>
+                <a href="tel:03-0000-0000" class="cta-button">📱 お電話でのお問い合わせ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>💡 アクセス解析は健康診断</strong> - 定期的なチェックで広告運用の健全性を維持し、継続的な成長を実現します。</p>
+            <p><small>© 2024 Premium Success Plan. All rights reserved.</small></p>
+        </div>
+    </footer>
+
+    <script>
+        // スクロールインジケーター
+        window.addEventListener('scroll', function() {
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            const scrolled = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.width = scrolled + '%';
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // スクロール時のアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // パフォーマンス最適化のための画像遅延読み込み
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
